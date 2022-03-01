@@ -17,24 +17,24 @@ Create a to-do app to help the user in arranging his daily tasks, where this app
 
 1. To navigate the main page of the repository [click here](https://github.com/GSG-CF05/TO-DO-APP_MahmoudHammad).
 
-2. Above the list of files, click Code.
-<br />
+2. Above the list of files, click Code.\
+
 ![](image/code.JPG)
 
-3. To clone the repository using HTTPS.
-<br />
+3. To clone the repository using HTTPS.\
+
 ![](image/https.JPG)
 
 4. Open Git Bash.
 
 5. Change the current working directory to the location where you want the cloned directory.
 
-6. Type ```git clone```, and then paste the URL you copied earlier.
-<br />
+6. Type ```git clone```, and then paste the URL you copied earlier.\
+
 ![](image/clone.JPG)
 
-7. Press **Enter** to create your local clone.
-<br />
+7. Press **Enter** to create your local clone.\
+
 ![](image/cloning.JPG.JPG)
 
 
