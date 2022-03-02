@@ -4,11 +4,46 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+  integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
   <link rel="stylesheet" href="style.css">
   <title>TO-DO App</title>
 </head>
 <body>
+  <header>
+    <h1>To-Do List</h1>
+    <i class="fa-solid fa-moon"></i>
+  </header>
   
+  <main class="container">
+
+    <section class="todo-container">
+
+      <div class="add-task">
+        <input type="text" />
+        <span class="plus"><i class="fas fa-plus"></i></span>
+      </div>
+      
+      <!-- <div class="tasks-content">
+        <span class="first-task">first task</span>
+        <div class="icons">
+          <i class="fas fa-trash-alt"></i>
+          <i class="fas fa-check-circle"></i>
+        </div>
+      </div> -->
+
+    </section>
+
+    <section class="tasks-stats">
+      <div class="tasks-count">Tasks <span>0</span></div>
+      <div class="tasks-completed">Completed <span>0</span></div>
+    </section>
+  </main>
   <script src="app.js"></script>
 </body>
 </html>
