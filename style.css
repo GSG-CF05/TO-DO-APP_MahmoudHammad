@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Montserrat&family=Readex+Pro:wght@300&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Dancing Script', cursive;
+  margin: 1rem;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+header i {
+  transform: rotate(210deg);
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: rgb(241, 211, 40);
+}
+
+
+.add-task {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: #009688;
+  position: relative;
+}
+
+.add-task input{
+  flex-grow: 1;
+  padding: 10px 15px;
+  background-color: #33ABA0;
+  outline: none;
+  border: none;
+  border-radius: 0 1rem 1rem 0px;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.plus {
+  position: absolute;
+  color: #009688;
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 0.9rem;
+  right: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.tasks-content {
+  padding: 1rem;
+}
+
+.tasks-content,
+.tasks-stats
+{
+  display: flex;
+  justify-content: space-between;
+}
+
+.tasks-stats {
+  position: absolute;
+  bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+
+.tasks-count span,
+.tasks-completed span
+{
+  background-color: red;
+  padding: 3px;
+  border-radius: 8px;
+}
+
+.tasks-completed span {
+  background-color: #67c0ec;
+}
+
+.fa-trash-alt {
+  color: red;
+}
+
+.fa-check-circle {
+  color: rgb(105, 192, 105);
+}
+
+.fa-check-circle,
+.fa-trash-alt {
+  cursor: pointer;
+}
