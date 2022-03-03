@@ -58,13 +58,6 @@ header i {
   padding: 1rem;
 }
 
-/* .tasks-content,
-.tasks-stats
-{
-  display: flex;
-  justify-content: space-between;
-} */
-
 .tasks-stats {
   position: absolute;
   bottom: 1rem;

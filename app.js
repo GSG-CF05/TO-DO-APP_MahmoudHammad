@@ -32,10 +32,12 @@ function createElements(text) {
     completedIcon : document.createElement('i'),
     editBtn : document.createElement('button')
   };
+  createElem.li.className = 'to-do-task'
   createElem.para.textContent = text;
   createElem.para.classList = 'para'
   createElem.container.setAttribute('class', 'icons');
-  createElem.deleteIcon.setAttribute('class', 'fas fa-trash-alt')
+  createElem.deleteIcon.setAttribute('class', 'fas fa-trash-alt');
+  createElem.deleteIcon.classList.add = 'delete'
   createElem.completedIcon.setAttribute('class', 'fas fa-check-circle');
   
   createElem.editBtn.textContent = 'Edit';
@@ -59,21 +61,27 @@ if(local) {
 }
 
 
-
+// this function to edit tasks and update the local storage
 document.addEventListener('click', (item) => {
-  
   if(item.target.className === 'edit-btn'){
-    const local = JSON.parse(localStorage.getItem('tasks'));
-    
-    console.log(local)
     htmlElements.task.focus();
     item.target.parentNode.parentNode.firstElementChild.textContent = htmlElements.task.value;
     const modifiedText = [...document.querySelectorAll('.para')].map((e) => {
       return {task :e.textContent}
     });
     localStorage.setItem('tasks', JSON.stringify(modifiedText));
-    console.log(modifiedText)
     htmlElements.task.value = '';
   }
+});
 
-})
+// this function to remove tasks and update the local storage
+document.addEventListener('click', (item) => {
+  if(item.target.classList.contains('fa-trash-alt')) {
+    item.target.parentNode.parentNode.remove();
+    const modifyLocalStorage = [...document.querySelectorAll('.to-do-task')].map((e) => {
+      return {task : e.firstChild.textContent}
+    })
+    
+     localStorage.setItem('tasks', JSON.stringify(modifyLocalStorage));
+  }
+});
