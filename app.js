@@ -2,9 +2,9 @@ const htmlElements = {
   task : document.querySelector('.task'),
   addBtn : document.querySelector('.plus'),
   tasksContainer : document.querySelector('.tasks-content'),
-  unorderdList : document.querySelector('.list')
+  unorderdList : document.querySelector('.list'),
+  completedTasks : document.querySelector('.tasks-completed span')
 }
-
 
 const tasksArr = [];
 
@@ -81,7 +81,15 @@ document.addEventListener('click', (item) => {
     const modifyLocalStorage = [...document.querySelectorAll('.to-do-task')].map((e) => {
       return {task : e.firstChild.textContent}
     })
-    
+
      localStorage.setItem('tasks', JSON.stringify(modifyLocalStorage));
   }
 });
+
+// this function to mark tasks
+document.addEventListener('click', (item) => {
+  if(item.target.classList.contains('fa-check-circle')) {
+    item.target.parentNode.parentNode.classList.toggle('completed');
+    const completedNum = document.querySelectorAll('.completed');
+    htmlElements.completedTasks.textContent = completedNum.length
+}});
