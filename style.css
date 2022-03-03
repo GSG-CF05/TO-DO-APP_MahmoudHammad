@@ -108,12 +108,19 @@ li .icons i {
   padding: 0.5rem;
 }
 
-button {
+.edit-btn {
   padding: 2px 5px;
   cursor: pointer;
 }
-button:hover {
+.edit-btn:hover {
   color: #fff;
   background-color: black;
   outline: none;
+}
+
+.save-btn {
+cursor: pointer;
+border: none;
+background-color: #fff;
+color: rgb(87, 12, 207);
 }
