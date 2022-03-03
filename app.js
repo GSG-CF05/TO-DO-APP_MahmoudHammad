@@ -5,6 +5,7 @@ const htmlElements = {
   unorderdList : document.querySelector('.list')
 }
 
+
 const tasksArr = [];
 
 //this function is responsible for adding tasks to the local storage and call createElements function to render elements on the webpage
@@ -31,13 +32,14 @@ function createElements(text) {
     completedIcon : document.createElement('i'),
     editBtn : document.createElement('button')
   };
-
   createElem.para.textContent = text;
+  createElem.para.classList = 'para'
   createElem.container.setAttribute('class', 'icons');
   createElem.deleteIcon.setAttribute('class', 'fas fa-trash-alt')
   createElem.completedIcon.setAttribute('class', 'fas fa-check-circle');
   
   createElem.editBtn.textContent = 'Edit';
+  createElem.editBtn.classList = 'edit-btn';
   createElem.container.appendChild(createElem.deleteIcon);
   createElem.container.appendChild(createElem.completedIcon);
   createElem.container.appendChild(createElem.editBtn);
@@ -58,4 +60,20 @@ if(local) {
 
 
 
+document.addEventListener('click', (item) => {
+  
+  if(item.target.className === 'edit-btn'){
+    const local = JSON.parse(localStorage.getItem('tasks'));
+    
+    console.log(local)
+    htmlElements.task.focus();
+    item.target.parentNode.parentNode.firstElementChild.textContent = htmlElements.task.value;
+    const modifiedText = [...document.querySelectorAll('.para')].map((e) => {
+      return {task :e.textContent}
+    });
+    localStorage.setItem('tasks', JSON.stringify(modifiedText));
+    console.log(modifiedText)
+    htmlElements.task.value = '';
+  }
 
+})
