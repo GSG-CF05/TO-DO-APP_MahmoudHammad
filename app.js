@@ -3,7 +3,8 @@ const htmlElements = {
   addBtn : document.querySelector('.plus'),
   tasksContainer : document.querySelector('.tasks-content'),
   unorderdList : document.querySelector('.list'),
-  completedTasks : document.querySelector('.tasks-completed span')
+  completedTasks : document.querySelector('.tasks-completed span'),
+  uncompletedTasks : document.querySelector('.tasks-count span')
 }
 
 const tasksArr = [];
@@ -19,7 +20,7 @@ function addTasks() {
     createElements(local[local.length - 1]['task'])
   };
   htmlElements.task.value = '';
-  
+  count()
 };
 
 // this function to render elements on the web page
@@ -83,6 +84,7 @@ document.addEventListener('click', (item) => {
     })
 
      localStorage.setItem('tasks', JSON.stringify(modifyLocalStorage));
+     count()
   }
 });
 
@@ -92,4 +94,11 @@ document.addEventListener('click', (item) => {
     item.target.parentNode.parentNode.classList.toggle('completed');
     const completedNum = document.querySelectorAll('.completed');
     htmlElements.completedTasks.textContent = completedNum.length
+    count()
 }});
+
+function count() {
+  const local = JSON.parse(localStorage.getItem('tasks'));
+  
+ htmlElements.uncompletedTasks.textContent = local.length - htmlElements.completedTasks.textContent
+};
