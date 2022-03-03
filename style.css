@@ -97,6 +97,10 @@ li {
   border-bottom: 1px solid #009688;
 }
 
+.completed {
+  text-decoration: line-through;
+}
+
 li .icons i {
   padding: 0.5rem;
 }
